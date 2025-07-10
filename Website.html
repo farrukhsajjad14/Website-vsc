@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Visionary Student Consultants - Premier education consultancy for China's top universities specializing in AI, Robotics, and cutting-edge technologies">
+  <title>Visionary Students Consultants | China's Premier Education Consultancy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #00b4d8;
+      --accent: #ff6b6b;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 0;
+      background: white;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      padding: 15px 0;
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    .nav-menu li a {
+      font-weight: 500;
+      color: var(--dark);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-menu li a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-menu li a:hover:after,
+    .nav-menu li a.active:after {
+      width: 100%;
+    }
+
+    .nav-menu li a:hover {
+      color: var(--primary);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid var(--secondary);
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      min-height: 800px;
+      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 180, 216, 0.8)), url('https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s both;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      animation: fadeInUp 1s both 0.3s;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeInUp 1s both 0.6s;
+    }
+
+    .hero-buttons .cta-button {
+      padding: 15px 35px;
+      font-size: 1.1rem;
+    }
+
+    .secondary-button {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .secondary-button:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* About Page */
+    .about-page {
+      padding: 120px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--gray);
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    .about-image {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .mission-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .mission-card i {
+      font-size: 3rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .mission-card h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    /* Services Page */
+    .services-page {
+      padding: 120px 0;
+      background: var(--light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-image img {
+      transform: scale(1.1);
+    }
+
+    .service-content {
+      padding: 30px;
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .service-content p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .read-more {
+      color: var(--secondary);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .read-more i {
+      margin-left: 5px;
+      transition: var(--transition);
+    }
+
+    .read-more:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Universities Page */
+    .universities-page {
+      padding: 120px 0;
+    }
+
+    .university-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .university-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .university-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .university-logo {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: var(--light);
+    }
+
+    .university-logo img {
+      max-height: 80px;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .university-info {
+      padding: 30px;
+    }
+
+    .university-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .university-info p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .university-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item h4 {
+      font-size: 1.8rem;
+      color: var(--secondary);
+      margin-bottom: 5px;
+    }
+
+    .stat-item p {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* Testimonials */
+    .testimonials-page {
+      padding: 120px 0;
+      background: var(--light);
+    }
+
+    .testimonials-slider {
+      max-width: 800px;
+      margin: 50px auto 0;
+      position: relative;
+      padding: 0 50px; /* Added padding for better centering */
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      margin: 0 20px;
+      width: 100%; /* Ensure full width within container */
+    }
+
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      border: 3px solid var(--secondary);
+    }
+
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .testimonial-text:before,
+    .testimonial-text:after {
+      content: '"';
+      font-size: 3rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      position: absolute;
+    }
+
+    .testimonial-text:before {
+      top: -20px;
+      left: -15px;
+    }
+
+    .testimonial-text:after {
+      bottom: -40px;
+      right: -15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .testimonial-role {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      list-style: none;
+    }
+
+    .slick-dots li {
+      margin: 0 5px;
+    }
+
+    .slick-dots button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      border: none;
+      font-size: 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .slick-dots .slick-active button {
+      background: var(--secondary);
+      transform: scale(1.2);
+    }
+
+    /* Contact Page */
+    .contact-page {
+      padding: 120px 0;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-details h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .contact-details p,
+    .contact-details a {
+      color: var(--gray);
+    }
+
+    .contact-details a:hover {
+      color: var(--secondary);
+    }
+
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .footer-col p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: var(--transition);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Section padding for navigation */
+    section {
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="#home" class="logo">VSC<span>.</span></a>
+      <ul class="nav-menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#universities">Universities</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="cta-button">Free Consultation</a>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 data-aos="fade-up">Empowering China's Future Innovators</h1>
+      <p data-aos="fade-up" data-aos-delay="300">Specialized consulting for AI, Robotics and Emerging Technologies at China's top universities</p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+        <a href="#services" class="cta-button">Our Services</a>
+        <a href="#contact" class="cta-button secondary-button">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Page -->
+  <section class="about-page" id="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>About Visionary Student Consultants</h2>
+        <p>Bridging academic excellence with industry innovation in China's most dynamic technological fields</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-image" data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Our Team">
+        </div>
+        <div class="about-text" data-aos="fade-left">
+          <h3>Your Gateway to China's Tech Education Excellence</h3>
+          <p>Founded in 2020 by Mr. F. Bukhari, Visionary Student Consultants has rapidly established itself as the premier consultancy for students seeking to leverage China's world-class education system in artificial intelligence, robotics, and emerging technologies.</p>
+          <p>With strategic partnerships across China's elite universities including Tsinghua, Peking University, Shanghai Jiao Tong, and Zhejiang University, we provide unparalleled access to cutting-edge programs that combine rigorous academics with real-world industry applications.</p>
+          <p>Our team of education specialists, former university admissions officers, and industry professionals understand the unique challenges international students face when navigating China's competitive higher education landscape. We've developed proprietary methodologies to match each student with their ideal academic pathway.</p>
+          <a href="#services" class="cta-button" style="display: inline-block; margin-top: 20px;">Discover Our Approach</a>
+        </div>
+      </div>
+
+      <div class="mission-vision">
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-bullseye"></i>
+          <h3>Our Mission</h3>
+          <p>To transform China's technological education landscape by connecting the world's brightest minds with cutting-edge academic programs that drive innovation and career success.</p>
+        </div>
+
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-eye"></i>
+          <h3>Our Vision</h3>
+          <p>A world where every talented student can access China's premier AI and robotics education regardless of background, creating the next generation of global tech leaders.</p>
+        </div>
+
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="500">
+          <i class="fas fa-chart-line"></i>
+          <h3>Our Impact</h3>
+          <p>Over 2,000 students placed with 100% scholarship success rate at China's top 20 universities for technology programs since our founding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Page -->
+  <section class="services-page" id="services">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Comprehensive Services</h2>
+        <p>End-to-end support from university selection to career placement in China's booming tech sector</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="University Selection">
+          </div>
+          <div class="service-content">
+            <h3>Strategic University & Program Selection</h3>
+            <p>Our proprietary matching algorithm identifies the ideal Chinese university and program based on your academic background, research interests, and career aspirations in AI/robotics.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Scholarship Support">
+          </div>
+          <div class="service-content">
+            <h3>Comprehensive Scholarship Support</h3>
+            <p>Maximize your funding opportunities with our expertise in Chinese government scholarships (CSC), university-specific awards, and corporate sponsorships for STEM students.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Admissions Consulting">
+          </div>
+          <div class="service-content">
+            <h3>Competitive Admissions Consulting</h3>
+            <p>From SOP polishing to interview preparation, our former admissions officers ensure your application stands out in China's highly selective tech programs.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Visa Assistance">
+          </div>
+          <div class="service-content">
+            <h3>Streamlined Visa Processing</h3>
+            <p>Our 100% success rate on student visas comes from meticulous document preparation and embassy relationship management specific to Chinese study permits.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Career Preparation">
+          </div>
+          <div class="service-content">
+            <h3>Industry-Focused Career Preparation</h3>
+            <p>Exclusive partnerships with Alibaba, Huawei, DJI and other tech giants provide internship pathways and job placement for our students.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Ongoing Support">
+          </div>
+          <div class="service-content">
+            <h3>Comprehensive On-Ground Support</h3>
+            <p>From airport pickup to housing arrangements and cultural orientation, we ensure a smooth transition to student life in China.</p>
+            <a href="#contact" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universities Page -->
+  <section class="universities-page" id="universities">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Partner Universities</h2>
+        <p>Strategic partnerships with China's elite institutions for AI, robotics and technology education</p>
+      </div>
+
+      <div class="university-grid">
+        <div class="university-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="university-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Tsinghua_University_Logo.svg/1200px-Tsinghua_University_Logo.svg.png" alt="Tsinghua University">
+          </div>
+          <div class="university-info">
+            <h3>Tsinghua University</h3>
+            <p>Ranked #1 in China for AI and Computer Science with state-of-the-art robotics labs and partnerships with Baidu, Tencent, and ByteDance.</p>
+            <div class="university-stats">
+              <div class="stat-item">
+                <h4>15+</h4>
+                <p>AI Research Centers</p>
+              </div>
+              <div class="stat-item">
+                <h4>98%</h4>
+                <p>Employment Rate</p>
+              </div>
+              <div class="stat-item">
+                <h4>$50M+</h4>
+                <p>Research Funding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="university-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="university-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Peking_University_seal.svg/1200px-Peking_University_seal.svg.png" alt="Peking University">
+          </div>
+          <div class="university-info">
+            <h3>Peking University</h3>
+            <p>Home to China's first College of Artificial Intelligence with Nobel laureate faculty and cutting-edge autonomous systems research.</p>
+            <div class="university-stats">
+              <div class="stat-item">
+                <h4>12</h4>
+                <p>Robotics Labs</p>
+              </div>
+              <div class="stat-item">
+                <h4>100%</h4>
+                <p>Scholarship Coverage</p>
+              </div>
+              <div class="stat-item">
+                <h4>#2</h4>
+                <p>China CS Ranking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="university-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="university-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Shanghai_Jiao_Tong_University_emblem.svg/1200px-Shanghai_Jiao_Tong_University_emblem.svg.png" alt="Shanghai Jiao Tong University">
+          </div>
+          <div class="university-info">
+            <h3>Shanghai Jiao Tong University</h3>
+            <p>Leader in industrial robotics and automation with direct pipelines to Shanghai's manufacturing and tech innovation hubs.</p>
+            <div class="university-stats">
+              <div class="stat-item">
+                <h4>30+</h4>
+                <p>Industry Partners</p>
+              </div>
+              <div class="stat-item">
+                <h4>1:5</h4>
+                <p>Faculty-Student Ratio</p>
+              </div>
+              <div class="stat-item">
+                <h4>#3</h4>
+                <p>Engineering China</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Page -->
+  <section class="testimonials-page" id="testimonials">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Success Stories</h2>
+        <p>Hear from students who transformed their futures through our China university programs</p>
+      </div>
+
+      <div class="testimonials-slider" data-aos="fade-up">
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Maria Chen">
+          </div>
+          <div class="testimonial-text">
+            Visionary Student Consultants completely transformed my academic trajectory. Their deep knowledge of China's AI programs helped me secure a full scholarship at Tsinghua that I didn't even know existed. Within 6 months of starting, I had research opportunities at Baidu's AI lab that most PhD students wait years for.
+          </div>
+          <div class="testimonial-author">Maria Chen</div>
+          <div class="testimonial-role">MS in Artificial Intelligence, Tsinghua University</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ahmed Khan">
+          </div>
+          <div class="testimonial-text">
+            Coming from Pakistan with limited resources, I never imagined studying robotics at a world-class Chinese university. VSC not only secured my admission and scholarship at Shanghai Jiao Tong but arranged housing and even helped my family visit. Their post-arrival support made all the difference in adjusting to life in China.
+          </div>
+          <div class="testimonial-author">Ahmed Khan</div>
+          <div class="testimonial-role">BS in Robotics Engineering, Shanghai Jiao Tong University</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Yuki Tanaka">
+          </div>
+          <div class="testimonial-text">
+            The internship placement service through VSC was invaluable. They connected me with DJI's robotics division during my second year at Zhejiang University, which turned into a full-time position after graduation. Their industry network in China's tech sector is truly unmatched by other consultancies.
+          </div>
+          <div class="testimonial-author">Yuki Tanaka</div>
+          <div class="testimonial-role">Robotics Engineer, DJI (Former Zhejiang University Student)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Page -->
+  <section class="contact-page" id="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Start Your Journey</h2>
+        <p>Contact us for a free consultation about studying AI, robotics or technology in China</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Our Office</h3>
+              <p>Pakistan Office: <br>Tarnol, Islamabad</p>
+              <p>China Office: <br> Shingai, China</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Contact Numbers</h3>
+              <p>Pakistan: +92 302 2290419</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email Us</h3>
+              <a href="mailto:farrukhsajjad921@gmail.com">farrukhsajjad921@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Working Hours</h3>
+              <p>Monday - Friday: 9am - 6pm</p>
+              <p>Saturday: 10am - 4pm</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left">
+          <h3>Send Us a Message</h3>
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-control" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <select class="form-control">
+                <option value="">Interested Program</option>
+                <option value="ai">Artificial Intelligence</option>
+                <option value="robotics">Robotics Engineering</option>
+                <option value="cs">Computer Science</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+        <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Visionary Student Consultants</h3>
+          <p>China's premier education consultancy specializing in AI, robotics and emerging technology programs at top universities.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/vsc24_7" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-weixin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+        </footer>
+
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#universities">Partner Universities</a></li>
+            <li><a href="#testimonials">Success Stories</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Programs</h3>
+          <ul class="footer-links">
+            <li><a href="https://www.coursera.org/learn/introduction-to-ai" target="_blank">Artificial Intelligence</a></li>
+            <li><a href="https://www.edx.org/learn/robotics" target="_blank">Robotics Engineering</a></li>
+            <li><a href="https://www.cs.cmu.edu/research/computer-science" target="_blank">Computer Science</a></li>
+            <li><a href="https://www.mit.edu/research/areas/machine-learning" target="_blank">Machine Learning</a></li>
+            <li><a href="https://arxiv.org/list/cs.RO/recent" target="_blank">Autonomous Systems</a></li>
+            <li><a href="https://towardsdatascience.com/" target="_blank">Data Science</a></li>
+          </ul>
+        </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2023 Visionary Student Consultants. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/923022290419" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+   // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      this.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+      });
+    });
+
+    // Testimonials slider with centered display
+    $('.testimonials-slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 600,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      arrows: false,
+      centerMode: true,  // Added for better centering
+      centerPadding: '0' // Removed extra padding
+    });
+
+    // Highlight active navigation item on scroll
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - 300) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
